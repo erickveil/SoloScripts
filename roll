@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Function to roll a single die
+roll_die() {
+	    local sides=$1
+	        echo $(( ( RANDOM % sides ) + 1 ))
+	}
+
+# Function to roll a d66
+roll_d66() {
+	    local tens=$(( ( RANDOM % 6 ) + 1 ))
+	        local ones=$(( ( RANDOM % 6 ) + 1 ))
+		    echo $(( tens * 10 + ones ))
+	    }
+
+    # Check if the correct number of arguments is provided
+    if [ "$#" -eq 1 ] && [ "$1" == "d66" ]; then
+	        result=$(roll_d66)
+		    echo "Rolling d66: $result"
+		        exit 0
+		elif [ "$#" -ne 2 ]; then
+			    echo "Usage: $0 <number_of_dice> <number_of_sides> or $0 d66"
+			        exit 1
+    fi
+
+    number_of_dice=$1
+    number_of_sides=$2
+    total=0
+
+    echo "Rolling $number_of_dice dice with $number_of_sides sides each..."
+
+    for (( i=1; i<=number_of_dice; i++ ))
+    do
+	        roll=$(roll_die $number_of_sides)
+		    echo "Die $i: $roll"
+		        total=$(( total + roll ))
+		done
+
+		echo "Total: $total"
+
