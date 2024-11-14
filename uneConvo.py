@@ -1,3 +1,5 @@
+#! /usr/bin/python3
+
 import random
 import sys
 
@@ -119,6 +121,15 @@ def determine_focus():
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
+        if sys.argv[1] in ["--help", "-h"]:
+            print("Usage: unConvo.py [relationship] [bearing]")
+            print("Possible relationships:")
+            for relationsihip in relationships:
+                print(f"  - {relationsihip}")
+            print("Possible bearings:")
+            for bearing in bearings:
+                print(f"  - {bearing}")
+            sys.exit(0)
         relationship_input = sys.argv[1].lower()
     else:
         relationship_input = None
