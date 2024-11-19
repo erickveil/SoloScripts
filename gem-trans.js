@@ -6,13 +6,13 @@ const process = require('process');
 const sceneTransitions = [
   { range: [1, 20], transition: "No Change", description: "The scene continues as planned." },
   { range: [21, 30], transition: "No Change", description: "The scene continues as planned." },
-  { range: [31, 40], transition: "Positive Replacement", description: "Completely replace all aspects of the existing scene positively: type, location, goal, and participants. Regenerate a new scene with the Focus as the reason for the change." },
-  { range: [41, 50], transition: "Positive Alteration", description: "Change a single aspect of the scene positively, defined by the Focus." },
-  { range: [51, 60], transition: "Positive Interruption", description: "Something positive occurs before the expected scene could start. The Focus is included in the interruption." },
+  { range: [31, 40], transition: "Positive Replacement", description: "Completely replace all aspects of the existing scene positively: type, location, goal, and participants. Regenerate a new scene with the Focus as the reason for the change. Lower the stakes." },
+  { range: [41, 50], transition: "Positive Alteration", description: "Change a single aspect of the scene positively, defined by the Focus. Lower the stakes or the difficulty." },
+  { range: [51, 60], transition: "Positive Interruption", description: "Something positive occurs before the expected scene could start. The Focus is included in the interruption. Lower the stakes or the difficulty." },
   { range: [61, 65], transition: "Random Event", description: "Roll on the random event table for Campaign Turns." },
-  { range: [66, 75], transition: "Negative Interruption", description: "Something negative occurs before the expected scene could start. The Focus is included in the interruption." },
-  { range: [76, 85], transition: "Negative Alteration", description: "Change a single aspect of the scene negatively, defined by the Focus." },
-  { range: [86, 95], transition: "Negative Replacement", description: "Completely replace all aspects of the existing scene negatively: type, location, goal, and participants. Regenerate a new scene with the Focus as the reason for the change." },
+  { range: [66, 75], transition: "Negative Interruption", description: "Something negative occurs before the expected scene could start. The Focus is included in the interruption. Raise the stakes or the difficulty." },
+  { range: [76, 85], transition: "Negative Alteration", description: "Change a single aspect of the scene negatively, defined by the Focus. Raise the stakes or the difficulty." },
+  { range: [86, 95], transition: "Negative Replacement", description: "Completely replace all aspects of the existing scene negatively: type, location, goal, and participants. Regenerate a new scene with the Focus as the reason for the change. Raise the stakes." },
   { range: [96, 100], transition: "Random Event", description: "Roll on the random event table for Campaign Turns." }
 ];
 
